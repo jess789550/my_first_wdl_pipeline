@@ -2,3 +2,4 @@ cromwell-executions
 cromwell-workflow-logs
 Homo_sapiens.GRCh38.dna.alt.fa*
 TESTX_H7YRLADXX_S1_L001_R1_001*
+*.jar

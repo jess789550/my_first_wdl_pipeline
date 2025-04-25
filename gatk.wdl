@@ -3,25 +3,21 @@ version 1.0
 workflow gatk {
     input {
         File input_bam
+        File bai_file
         String file_prefix
         File ref_genome
-        File ref_genome_bwt
-        File ref_genome_sa
-        File ref_genome_amb
-        File ref_genome_ann
-        File ref_genome_pac
+        File ref_genome_fai
+        File ref_genome_dict
     }
 
     call gatk_haplotypecaller {
         input:
             input_bam = input_bam,
+            bai_file = bai_file,
             file_prefix = file_prefix,
             ref_genome = ref_genome,
-            ref_genome_bwt = ref_genome_bwt,
-            ref_genome_sa = ref_genome_sa,
-            ref_genome_amb = ref_genome_amb,
-            ref_genome_ann = ref_genome_ann,
-            ref_genome_pac = ref_genome_pac
+            ref_genome_fai = ref_genome_fai,
+            ref_genome_dict = ref_genome_dict
     }
 
     output {
@@ -32,21 +28,21 @@ workflow gatk {
 task gatk_haplotypecaller {
     input {
         File input_bam
+        File bai_file
         String file_prefix
         File ref_genome
-        File ref_genome_bwt
-        File ref_genome_sa
-        File ref_genome_amb
-        File ref_genome_ann
-        File ref_genome_pac
+        File ref_genome_fai
+        File ref_genome_dict
     }
     
     command {
+        cp ${input_bam} ./input.bam
+        cp ${bai_file} ./input.bam.bai
+        
         /data/resources/GenomeAnalysisTK-4.5.0.0/gatk-4.5.0.0/gatk21 --java-options "-Xmx4g" HaplotypeCaller  \
         -R ${ref_genome} \
-        -I ${input_bam} \
-        -O ${file_prefix}.vcf.gz \
-        -ERC GVCF 
+        -I input.bam \
+        -O ${file_prefix}.vcf.gz 
     }
     
     output {

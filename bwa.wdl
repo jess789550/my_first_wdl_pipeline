@@ -40,13 +40,13 @@ workflow bwa {
 
     call index_bam {
         input:
-            sort_bam_file = sort_bam.file3,
+            sort_bam_file = sort_bam.sorted_bam,
             file_prefix = file_prefix
     }
 
     output {
-        File file3 = sort_bam.file3
-        File file4 = index_bam.file4
+        File sorted_bam = sort_bam.sorted_bam
+        File sorted_bam_index = index_bam.bam_index
     }
 }
 
@@ -64,7 +64,7 @@ task bwa_mem {
     }
     
     command {
-        bwa mem -t 6 ${ref_genome} ${input_fastq_1} ${input_fastq_2} > ${file_prefix}.sam
+        bwa mem -t 6 -R '@RG\tID:sample1\tSM:sample1\tPL:ILLUMINA\tLB:lib1\tPU:unit1' ${ref_genome} ${input_fastq_1} ${input_fastq_2} > ${file_prefix}.sam
     }
     
     output {
@@ -98,7 +98,7 @@ task sort_bam {
     }
     
     output {
-        File file3 = "${file_prefix}-sorted.bam"
+        File sorted_bam = "${file_prefix}-sorted.bam"
     }
 }
 
@@ -113,6 +113,6 @@ task index_bam {
     }
     
     output {
-        File file4 = "${file_prefix}-sorted.bam.bai"
+        File bam_index = "${file_prefix}-sorted.bam.bai"
     }
 }

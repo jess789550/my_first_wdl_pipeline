@@ -19,6 +19,8 @@ workflow pipeline {
     File ref_genome_amb
     File ref_genome_ann
     File ref_genome_pac
+    File ref_genome_fai
+    File ref_genome_dict
     
     # Define input_fastq as an array of FilePair records
     Array[Pair[File,File]] input_fastq
@@ -56,18 +58,16 @@ workflow pipeline {
         ref_genome_ann = ref_genome_ann,
         ref_genome_pac = ref_genome_pac
     }
-
+    
     # GATK HaplotypeCaller Variant Calling
     call gatk.gatk_haplotypecaller {
       input:
-        input_bam = bwa.file3,
+        input_bam = bwa.sorted_bam,
+        bai_file = bwa.sorted_bam_index,
         ref_genome = ref_genome,
         file_prefix = file_prefix,
-        ref_genome_bwt = ref_genome_bwt,
-        ref_genome_sa = ref_genome_sa,
-        ref_genome_amb = ref_genome_amb,
-        ref_genome_ann = ref_genome_ann,
-        ref_genome_pac = ref_genome_pac
+        ref_genome_fai = ref_genome_fai,
+        ref_genome_dict = ref_genome_dict
     }
     
     # Let user know pipeline is Finished
@@ -86,10 +86,9 @@ task initialise {
   }
 
   command {
-    echo 
-      """ 
+    echo """ 
       -----------------
-      Starting Pipeline
+      Starting Pipeline 🚀
       -----------------   
       
       ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
@@ -107,6 +106,7 @@ task initialise {
 ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
 ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
       """
+    
     echo ${input_fastq_1}
     echo ${input_fastq_2}
     echo ${ref_genome}
@@ -123,10 +123,9 @@ task finish {
   }
 
   command {
-    echo
-      """
+    echo """
       -----------------
-      Finished pipeline
+      Finished pipeline 🚀
       -----------------
 
   ⠀⠀⠀⠀⠀⠀⠀⠀⢀⣠⣶⠾⠛⠛⠋⠉⠛⠛⠷⢶⣤⡀⠀⠀⠀⠀⠀⠀⠀⠀
@@ -142,5 +141,5 @@ task finish {
   ⠀⠀⠀⠀⠀⠀⠀⠀⠙⠻⢶⣤⣄⣀⣀⣀⣀⣠⣤⡶⠟⠋⠀⠀⠀⠀⠀⠀⠀⠀
        
   ⠀⠀⠀⠀"""
-  }
+   }
 }

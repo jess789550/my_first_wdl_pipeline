@@ -1,14 +1,16 @@
 {
   "pipeline.input_fastq": [
                            {
-                            "left": "/data/jess_tmp/bristol/TESTX_H7YRLADXX_S1_L001_R1_001.fastq.gz", 
-                            "right": "/data/jess_tmp/bristol/TESTX_H7YRLADXX_S1_L001_R2_001.fastq.gz"
+                            "left": "/data/jess_tmp/my_first_wdl_pipeline/TESTX_H7YRLADXX_S1_L001_R1_001.fastq.gz", 
+                            "right": "/data/jess_tmp/my_first_wdl_pipeline/TESTX_H7YRLADXX_S1_L001_R2_001.fastq.gz"
                            }
                           ],
-  "pipeline.ref_genome": "/data/jess_tmp/bristol/Homo_sapiens.GRCh38.dna.alt.fa",
-  "pipeline.ref_genome_bwt": "/data/jess_tmp/bristol/Homo_sapiens.GRCh38.dna.alt.fa.bwt",
-  "pipeline.ref_genome_sa": "/data/jess_tmp/bristol/Homo_sapiens.GRCh38.dna.alt.fa.sa",
-  "pipeline.ref_genome_amb": "/data/jess_tmp/bristol/Homo_sapiens.GRCh38.dna.alt.fa.amb",
-  "pipeline.ref_genome_ann": "/data/jess_tmp/bristol/Homo_sapiens.GRCh38.dna.alt.fa.ann",
-  "pipeline.ref_genome_pac": "/data/jess_tmp/bristol/Homo_sapiens.GRCh38.dna.alt.fa.pac"
+  "pipeline.ref_genome": "/data/jess_tmp/my_first_wdl_pipeline/Homo_sapiens.GRCh38.dna.alt.fa",
+  "pipeline.ref_genome_bwt": "/data/jess_tmp/my_first_wdl_pipeline/Homo_sapiens.GRCh38.dna.alt.fa.bwt",
+  "pipeline.ref_genome_sa": "/data/jess_tmp/my_first_wdl_pipeline/Homo_sapiens.GRCh38.dna.alt.fa.sa",
+  "pipeline.ref_genome_amb": "/data/jess_tmp/my_first_wdl_pipeline/Homo_sapiens.GRCh38.dna.alt.fa.amb",
+  "pipeline.ref_genome_ann": "/data/jess_tmp/my_first_wdl_pipeline/Homo_sapiens.GRCh38.dna.alt.fa.ann",
+  "pipeline.ref_genome_pac": "/data/jess_tmp/my_first_wdl_pipeline/Homo_sapiens.GRCh38.dna.alt.fa.pac",
+  "pipeline.ref_genome_fai": "/data/jess_tmp/my_first_wdl_pipeline/Homo_sapiens.GRCh38.dna.alt.fa.fai",
+  "pipeline.ref_genome_dict": "/data/jess_tmp/my_first_wdl_pipeline/Homo_sapiens.GRCh38.dna.alt.dict"
 }

@@ -12,6 +12,7 @@ Building a simple pipeline using WDL
 # Index reference genome file
 bwa index Homo_sapiens.GRCh38.dna.alt.fa
 samtools faindex Homo_sapiens.GRCh38.dna.alt.fa
+java -jar /opt/software/picard-tools-1.96/CreateSequenceDictionary.jar R=Homo_sapiens.GRCh38.dna.alt.fa O=Homo_sapiens.GRCh38.dna.alt.dict
 ```
 
 ## Run pipeline locally
@@ -24,5 +25,6 @@ java -jar cromwell-88.jar run pipeline.wdl -i pipeline.json -o options.json
 dx login
 dx upload Homo_Sapiens*
 dx upload TESTX*
-java -jar dxCompiler-2.13.0.jar compile pipeline.wdl -inputs inputs.json -options options.json
+dx upload *.json
+java -jar dxCompiler-2.13.0.jar compile pipeline.wdl -inputs inputs.json
 ```

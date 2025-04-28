@@ -1,0 +1,77 @@
+{
+  "stage-common.ref_genome_sa": {
+    "$dnanexus_link": {
+      "id": "file-J050Jp84B4qP88jxB5yq3v42",
+      "project": "project-Gzzg5v04B4q15JF0kGj8ZBxj"
+    }
+  },
+  "stage-common.input_fastq": {
+    "___": [{
+      "left": {
+        "$dnanexus_link": {
+          "id": "file-J07b0Z04B4q4PPVyJ0qqzfQX",
+          "project": "project-Gzzg5v04B4q15JF0kGj8ZBxj"
+        }
+      },
+      "right": {
+        "$dnanexus_link": {
+          "id": "file-J07b0ZQ4B4q5f370zbkZQ8Kv",
+          "project": "project-Gzzg5v04B4q15JF0kGj8ZBxj"
+        }
+      }
+    }]
+  },
+  "stage-common.ref_genome_bwt": {
+    "$dnanexus_link": {
+      "id": "file-J050Jk84B4q7YbjqQkYYjjGb",
+      "project": "project-Gzzg5v04B4q15JF0kGj8ZBxj"
+    }
+  },
+  "stage-common.ref_genome_fai": {
+    "$dnanexus_link": {
+      "id": "file-J05jBg04B4q439QyqZf009Bf",
+      "project": "project-Gzzg5v04B4q15JF0kGj8ZBxj"
+    }
+  },
+  "stage-common.ref_genome": {
+    "$dnanexus_link": {
+      "id": "file-J07b0zQ4B4qKz0Xq6yB6YQyg",
+      "project": "project-Gzzg5v04B4q15JF0kGj8ZBxj"
+    }
+  },
+  "stage-common.ref_genome_pac": {
+    "$dnanexus_link": {
+      "id": "file-J050Jkj4B4q3Zk812b71y2Pg",
+      "project": "project-Gzzg5v04B4q15JF0kGj8ZBxj"
+    }
+  },
+  "stage-common.input_fastq___dxfiles": [{
+    "$dnanexus_link": {
+      "id": "file-J07b0Z04B4q4PPVyJ0qqzfQX",
+      "project": "project-Gzzg5v04B4q15JF0kGj8ZBxj"
+    }
+  }, {
+    "$dnanexus_link": {
+      "id": "file-J07b0ZQ4B4q5f370zbkZQ8Kv",
+      "project": "project-Gzzg5v04B4q15JF0kGj8ZBxj"
+    }
+  }],
+  "stage-common.ref_genome_dict": {
+    "$dnanexus_link": {
+      "id": "file-J05kf3j4B4q631vq7xFjVGp0",
+      "project": "project-Gzzg5v04B4q15JF0kGj8ZBxj"
+    }
+  },
+  "stage-common.ref_genome_amb": {
+    "$dnanexus_link": {
+      "id": "file-J050Jjj4B4q7YbjqQkYYjjGV",
+      "project": "project-Gzzg5v04B4q15JF0kGj8ZBxj"
+    }
+  },
+  "stage-common.ref_genome_ann": {
+    "$dnanexus_link": {
+      "id": "file-J050Jk04B4q7YbjqQkYYjjGY",
+      "project": "project-Gzzg5v04B4q15JF0kGj8ZBxj"
+    }
+  }
+}

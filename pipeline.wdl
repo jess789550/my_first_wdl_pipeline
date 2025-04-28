@@ -1,5 +1,5 @@
-# Run Cromwell workflow: java -jar cromwell-88.jar run pipeline.wdl -i pipeline.json -o options.json
-# java -jar dxCompiler-2.13.0.jar compile pipeline.wdl -inputs inputs.json 
+# Run Cromwell workflow locally: java -jar cromwell-88.jar run pipeline.wdl -i pipeline.json -o options.json
+# Run WDL in DNAnexus: java -jar dxCompiler-2.13.0.jar compile pipeline.wdl -inputs inputs.json --project Jess-training-resources --destination /test_pipeline
 # ref_genome from https://ftp.ensembl.org/pub/release-113/fasta/homo_sapiens/dna/
 # FASTQ files from https://github.com/hartwigmedical/testdata
 

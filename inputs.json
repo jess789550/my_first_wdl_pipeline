@@ -1,0 +1,16 @@
+{
+  "pipeline.input_fastq": [
+                           {
+                            "left": "dx:///test_pipeline/TESTX_H7YRLADXX_S1_L001_R1_001.fastq.gz", 
+                            "right": "dx:///test_pipeline/TESTX_H7YRLADXX_S1_L001_R2_001.fastq.gz"
+                           }
+                          ],
+  "pipeline.ref_genome": "dx:///test_pipeline/Homo_sapiens.GRCh38.dna.alt.fa",
+  "pipeline.ref_genome_bwt": "dx:///test_pipeline/Homo_sapiens.GRCh38.dna.alt.fa.bwt",
+  "pipeline.ref_genome_sa": "dx:///test_pipeline/Homo_sapiens.GRCh38.dna.alt.fa.sa",
+  "pipeline.ref_genome_amb": "dx:///test_pipeline/Homo_sapiens.GRCh38.dna.alt.fa.amb",
+  "pipeline.ref_genome_ann": "dx:///test_pipeline/Homo_sapiens.GRCh38.dna.alt.fa.ann",
+  "pipeline.ref_genome_pac": "dx:///test_pipeline/Homo_sapiens.GRCh38.dna.alt.fa.pac",
+  "pipeline.ref_genome_fai": "dx:///test_pipeline/Homo_sapiens.GRCh38.dna.alt.fa.fai",
+  "pipeline.ref_genome_dict": "dx:///test_pipeline/Homo_sapiens.GRCh38.dna.alt.dict"
+}

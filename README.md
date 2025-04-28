@@ -26,5 +26,5 @@ dx login
 dx upload Homo_Sapiens*
 dx upload TESTX*
 dx upload *.json
-java -jar dxCompiler-2.13.0.jar compile pipeline.wdl -inputs inputs.json
+java -jar dxCompiler-2.13.0.jar compile pipeline.wdl -inputs inputs.json --project Jess-training-resources --destination /test_pipeline
 ```

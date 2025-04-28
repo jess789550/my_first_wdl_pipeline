@@ -17,7 +17,7 @@ java -jar /opt/software/picard-tools-1.96/CreateSequenceDictionary.jar R=Homo_sa
 
 ## Run pipeline locally
 ```
-java -jar cromwell-88.jar run pipeline.wdl -i pipeline.json -o options.json
+java -jar cromwell-88.jar run pipeline.wdl -i pipeline.json -o options.json  # Requires Java 11+
 ```
 
 ## Run pipeline on DNAnexus
@@ -26,5 +26,6 @@ dx login
 dx upload Homo_Sapiens*
 dx upload TESTX*
 dx upload *.json
-java -jar dxCompiler-2.13.0.jar compile pipeline.wdl -inputs inputs.json --project Jess-training-resources --destination /test_pipeline
+java -jar dxCompiler-2.13.0.jar compile pipeline.wdl -inputs inputs.json --project Jess-training-resources --destination /test_pipeline  # Requires Java 8 or 11
+dx run pipeline -f inputs.dx.json
 ```

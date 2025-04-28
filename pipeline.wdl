@@ -9,6 +9,7 @@ version 1.0
 import "fastqc.wdl" as fastqc
 import "bwa.wdl" as bwa
 import "gatk.wdl" as gatk
+import "vep.wdl" as vep
 
 workflow pipeline {
   input {
@@ -69,11 +70,18 @@ workflow pipeline {
         ref_genome_fai = ref_genome_fai,
         ref_genome_dict = ref_genome_dict
     }
+
+    # Call variants using VEP 
+    call vep.vep {
+      input:
+        vcf = gatk_haplotypecaller.vcf_file,
+        file_prefix = file_prefix
+    }
     
     # Let user know pipeline is Finished
     call finish {
       input:
-        gatk_output = gatk_haplotypecaller.vcf_file
+        final_output = vep.annotated_file
     }
   }
 }
@@ -119,7 +127,7 @@ task initialise {
 
 task finish {
   input{
-    File gatk_output
+    File final_output
   }
 
   command {

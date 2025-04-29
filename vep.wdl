@@ -24,10 +24,14 @@ task vep_annotation {
     }
     
     command {
-        /data/software_tmp/ensembl-vep-release-108/vep -i ${vcf} -o ${file_prefix}.txt --cache --dir_cache /data/vep/
+        vep -i ${vcf} -o ${file_prefix}.txt --database
     }
     
     output {
         File annotated_file = "${file_prefix}.txt"
+    }
+    
+    runtime {
+        docker: "ensemblorg/ensembl-vep:release_108.2"
     }
 }

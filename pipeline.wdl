@@ -84,6 +84,15 @@ workflow pipeline {
         final_output = vep.annotated_file
     }
   }
+  
+  output {
+    Array[File] fastqc_R1_reports      = fastqc.file1
+    Array[File] fastqc_R2_reports      = fastqc.file2
+    Array[File] bams                   = bwa.sorted_bam
+    Array[File] bams_index             = bwa.sorted_bam_index
+    Array[File] raw_vcfs               = gatk_haplotypecaller.vcf_file
+    Array[File] annotated_vcfs         = vep.annotated_file
+  }
 }
 
 task initialise {

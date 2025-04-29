@@ -39,7 +39,7 @@ task gatk_haplotypecaller {
         cp ${input_bam} ./input.bam
         cp ${bai_file} ./input.bam.bai
         
-        /data/resources/GenomeAnalysisTK-4.5.0.0/gatk-4.5.0.0/gatk21 --java-options "-Xmx4g" HaplotypeCaller  \
+        gatk --java-options "-Xmx4g" HaplotypeCaller  \
         -R ${ref_genome} \
         -I input.bam \
         -O ${file_prefix}.vcf.gz 
@@ -47,5 +47,9 @@ task gatk_haplotypecaller {
     
     output {
         File vcf_file = "${file_prefix}.vcf.gz"
+    }
+    
+    runtime {
+        docker: "broadinstitute/gatk:4.5.0.0"
     }
 }

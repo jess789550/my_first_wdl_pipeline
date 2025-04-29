@@ -70,6 +70,10 @@ task bwa_mem {
     output {
         File file1 = "${file_prefix}.sam"
     }
+    
+    runtime {
+        docker: "biocontainers/bwa:0.7.12"
+    }
 }
 
 task sam_to_bam {
@@ -84,6 +88,10 @@ task sam_to_bam {
     
     output {
         File file2 = "${file_prefix}.bam"
+    }
+
+    runtime {
+        docker: "staphb/samtools:1.13"
     }
 }
 
@@ -100,6 +108,10 @@ task sort_bam {
     output {
         File sorted_bam = "${file_prefix}-sorted.bam"
     }
+
+    runtime {
+        docker: "staphb/samtools:1.13"
+    }
 }
 
 task index_bam {
@@ -114,5 +126,9 @@ task index_bam {
     
     output {
         File bam_index = "${file_prefix}-sorted.bam.bai"
+    }
+
+    runtime {
+        docker: "staphb/samtools:1.13"
     }
 }
